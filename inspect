@@ -3,12 +3,12 @@
 echo '------------------------------------------------------'
 echo 'ENV VARS:'
 env
-grep -E '*' /etc/profile.d/*
+#grep -E '*' /etc/profile.d/*
 
 echo '------------------------------------------------------'
 echo '(VIRTUAL) HARDWARE:'
-free
-grep 'model name' /proc/cpuinfo
+#free
+#grep 'model name' /proc/cpuinfo
 
 echo '------------------------------------------------------'
 echo 'OPERATING SYSTEM:'
@@ -17,10 +17,11 @@ ulimit -a
 
 echo '------------------------------------------------------'
 echo 'INSTALLED SOFTWARE'
-dpkg -l
+#dpkg -l
+find /Applications -maxdepth 2
 find /opt -maxdepth 3 -executable
 find /usr/local -maxdepth 3 -executable
-ls -l /usr/lib/jvm
+#ls -l /usr/lib/jvm
 
 echo '------------------------------------------------------'
 echo 'OTHERS'
