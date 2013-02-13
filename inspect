@@ -20,6 +20,7 @@ echo 'INSTALLED SOFTWARE'
 dpkg -l
 find /opt -maxdepth 3 -executable
 find /usr/local -maxdepth 3 -executable
+ls -l /usr/lib/jvm
 
 echo '------------------------------------------------------'
 echo 'OTHERS'
