@@ -1,1 +1,2 @@
-script: ./inspect
+language: node_js
+script:   ./inspect
