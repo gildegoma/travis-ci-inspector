@@ -1,23 +1,28 @@
 #!/bin/bash
 
+echo '------------------------------------------------------'
 echo 'ENV VARS:'
 env
 grep -E '*' /etc/profile.d/*
 
+echo '------------------------------------------------------'
 echo '(VIRTUAL) HARDWARE:'
 free
-cat /proc/cpuinfo
+grep 'model name' /proc/cpuinfo
 
+echo '------------------------------------------------------'
 echo 'OPERATING SYSTEM:'
 uname -a
 ulimit -a
 
+echo '------------------------------------------------------'
 echo 'INSTALLED SOFTWARE'
 dpkg -l
 find /opt -maxdepth 3 -executable
 find /usr/local -maxdepth 3 -executable
 
+echo '------------------------------------------------------'
 echo 'OTHERS'
 find /tmp -maxdepth 4
-find $HOME
+find $HOME -maxdepth 3
 
