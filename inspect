@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo 'ENV VARS:'
+env
+grep -E '*' /etc/profile.d/*
+
+echo '(VIRTUAL) HARDWARE:'
+free
+cat /proc/cpuinfo
+
+echo 'OPERATING SYSTEM:'
+uname -a
+ulimit -a
+
+echo 'INSTALLED SOFTWARE'
+dpkg -l
+find /opt -maxdepth 3 -executable
+find /usr/local -maxdepth 3 -executable
+
+echo 'OTHERS'
+find /tmp -maxdepth 4
+find $HOME
+
