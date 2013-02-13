@@ -1,1 +1,3 @@
-script: ./inspect
+language: php
+script:   ./inspect
+
