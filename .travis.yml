@@ -1,1 +1,4 @@
-script: ./inspect
+language: python
+before_script:
+  - file /usr/bin/chrome-browser
+script:   ./inspect
