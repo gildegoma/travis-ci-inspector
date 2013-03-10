@@ -1,0 +1,4 @@
+# File used to trigger from GitHub new builds (not from Travis UI, in order to compare them)
+
+- build 9: re-run build 8
+
