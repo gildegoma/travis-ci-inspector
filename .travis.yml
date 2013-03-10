@@ -11,4 +11,4 @@ script:
   - export DISPLAY=:99.0
   - chromium-browser &
   - google-chrome &
-  - exit 0
+  - sleep 60; exit 0
