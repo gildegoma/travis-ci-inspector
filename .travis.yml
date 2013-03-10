@@ -5,5 +5,5 @@ before_script:
   - file /usr/bin/chromium-browser
 script:   
   - ./inspect
-  - chromium-browser
-  - google-chrome
+  - which chromium-browser
+  - which google-chrome
