@@ -9,6 +9,7 @@ echo '------------------------------------------------------'
 echo '(VIRTUAL) HARDWARE:'
 free
 grep 'model name' /proc/cpuinfo
+mount
 
 echo '------------------------------------------------------'
 echo 'OPERATING SYSTEM:'
