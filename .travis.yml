@@ -9,6 +9,6 @@ script:
   - file `which chromium-browser`
   - file `which google-chrome`
   - export DISPLAY=:99.0
-  - chromium-browser &
+#  - chromium-browser &
   - google-chrome &
   - sleep 60; exit 0
