@@ -8,3 +8,7 @@ script:
   - ./inspect
   - file `which chromium-browser`
   - file `which google-chrome`
+  - export DISPLAY=:99.0
+  - chromium-browser &
+  - google-chrome &
+  - exit 0
