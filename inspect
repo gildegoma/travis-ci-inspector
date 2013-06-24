@@ -23,6 +23,10 @@ find /usr/local -maxdepth 3 -executable
 ls -l /usr/lib/jvm
 
 echo '------------------------------------------------------'
+echo 'PHP SPECIFIC'
+phpunit --version
+
+echo '------------------------------------------------------'
 echo 'OTHERS'
 find /tmp -maxdepth 4
 find $HOME -maxdepth 3
