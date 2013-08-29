@@ -24,6 +24,16 @@ ls -l /usr/lib/jvm
 
 echo '------------------------------------------------------'
 echo 'OTHERS'
+who
 find /tmp -maxdepth 4
 find $HOME -maxdepth 3
+
+echo '------------------------------------------------------'
+echo 'Scala / SBT - specific stuff: '
+du -hs ~/.sbt/*
+du -hs ~/.ivy2/*
+echo '/etc/sbt/jvmopts:'
+cat /etc/sbt/jvmopts
+echo '/etc/sbt/sbtopts:'
+cat /etc/sbt/sbtopts
 
