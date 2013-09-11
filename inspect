@@ -45,6 +45,7 @@ sudo apt-get install -qq qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils
 sudo adduser travis kvm
 sudo adduser travis libvirtd
 sudo modprobe kvm_amd
+sudo modprobe kvm
 sudo kvm-ok
 
 bash -l -c "sudo virsh -c qemu:///system list > qemu-check.txt"
