@@ -10,6 +10,8 @@ echo '(VIRTUAL) HARDWARE:'
 free
 echo "CPU Model:"
 grep 'model name' /proc/cpuinfo
+echo "64-bit:"
+egrep -c ' lm ' /proc/cpuinfo
 echo "Intel VT Support":
 egrep -c '(vmx|svm)' /proc/cpuinfo
 
@@ -29,4 +31,24 @@ echo '------------------------------------------------------'
 echo 'OTHERS'
 find /tmp -maxdepth 4
 find $HOME -maxdepth 3
+
+echo '------------------------------------------------------'
+echo 'Check if KVM is supported... '
+
+sudo apt-get update -qq
+sudo apt-get install -qq cpu-checker
+
+kvm-ok
+
+echo '------------------------------------------------------'
+echo 'Install KVM:'
+
+sudo apt-get install -qq qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils
+sudo adduser travis kvm
+sudo adduser travis libvirtd
+
+bash -l -c "sudo virsh -c qemu:///system list > qemu-check.txt"
+
+cat ./qemu-check.txt
+
 
