@@ -38,14 +38,14 @@ echo 'Check if KVM is supported... '
 sudo apt-get update -qq
 sudo apt-get install -qq cpu-checker
 
-sudo kvm-ok
-
 echo '------------------------------------------------------'
 echo 'Install KVM:'
 
 sudo apt-get install -qq qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils
 sudo adduser travis kvm
 sudo adduser travis libvirtd
+sudo modprobe kvm_amd
+sudo kvm-ok
 
 bash -l -c "sudo virsh -c qemu:///system list > qemu-check.txt"
 
