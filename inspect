@@ -38,7 +38,7 @@ echo 'Check if KVM is supported... '
 sudo apt-get update -qq
 sudo apt-get install -qq cpu-checker
 
-kvm-ok
+sudo kvm-ok
 
 echo '------------------------------------------------------'
 echo 'Install KVM:'
