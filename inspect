@@ -8,7 +8,10 @@ grep -E '*' /etc/profile.d/*
 echo '------------------------------------------------------'
 echo '(VIRTUAL) HARDWARE:'
 free
+echo "CPU Model:"
 grep 'model name' /proc/cpuinfo
+echo "Intel VT Support":
+egrep -c '(vmx|svm)' /proc/cpuinfo
 
 echo '------------------------------------------------------'
 echo 'OPERATING SYSTEM:'
