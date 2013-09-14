@@ -35,3 +35,30 @@ echo 'OTHERS'
 find /tmp -maxdepth 4
 find $HOME -maxdepth 3
 
+echo '------------------------------------------------------'
+echo 'CASSANDRA'
+
+ls -ltrh /usr/local/cassandra
+sudo diff /usr/local/cassandra/etc/cassandra-env.sh /usr/local/cassandra/conf/cassandra-env.sh
+
+echo '------------------------------------------------------'
+echo 'cassandra SystemV script:'
+sudo cat /etc/init.d/cassandra
+
+echo '------------------------------------------------------'
+echo 'cassandra conf env.sh:'
+sudo cat /usr/local/cassandra/conf/cassandra-env.sh
+echo '------------------------------------------------------'
+echo 'cassandra etc env.sh:'
+sudo cat /usr/local/cassandra/etc/cassandra-env.sh
+
+echo '------------------------------------------------------'
+sudo service cassandra status
+sudo service cassandra start
+sudo service cassandra status
+
+echo '------------------------------------------------------'
+echo 'cassandra logs:'
+sudo cat /var/log/cassandra/system.log
+
+
