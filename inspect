@@ -17,6 +17,7 @@ echo '------------------------------------------------------'
 echo 'OPERATING SYSTEM:'
 uname -a
 ulimit -a
+cat /etc/issue
 
 echo '------------------------------------------------------'
 echo 'INSTALLED SOFTWARE'
@@ -24,6 +25,10 @@ dpkg -l
 find /opt -maxdepth 3 -executable
 find /usr/local -maxdepth 3 -executable
 ls -l /usr/lib/jvm
+
+echo 'OUTDATED SOFTWARE'
+sudo apt-get install -qq apt-show-versions
+sudo apt-show-versions -u
 
 echo '------------------------------------------------------'
 echo 'OTHERS'
