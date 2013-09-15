@@ -35,7 +35,7 @@ echo 'SERVICES'
 
 ls -ltrh /etc/init.d/
 
-for s in {'mysql','postgresql','mongodb','couchdb','rabbitmq','riak','memcached','redis','cassandra','neo4j','elasticsearch','kestrel'}; do
+for s in {'mysql','postgresql','mongodb','couchdb','rabbitmq-server','riak','memcached','redis-server','cassandra','neo4j','elasticsearch','kestrel'}; do
   echo "Check $s status:"
   sudo service $s status
 done
