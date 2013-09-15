@@ -31,6 +31,16 @@ sudo apt-get install -qq apt-show-versions
 sudo apt-show-versions -u
 
 echo '------------------------------------------------------'
+echo 'SERVICES'
+
+ls -ltrh /etc/init.d/
+
+for s in ( mysql postgresql mongodb couchdb rabbitmq riak memcached redis cassandra neo4j elasticsearch kestrel ) do
+  echo "Check $s status:"
+  sudo service $s status
+done
+
+echo '------------------------------------------------------'
 echo 'OTHERS'
 find /tmp -maxdepth 4
 find $HOME -maxdepth 3
