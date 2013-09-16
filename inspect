@@ -48,10 +48,10 @@ sudo ls -ltrh /etc/postgresql/
 echo '/etc/postgresql/9.1:'
 sudo ls -ltrh /etc/postgresql/9.1/main
 
-echo 'postgresql.conf:'
-sudo cat '/etc/postgresql/9.1/main/postgresql.conf'
-echo 'pg_hba.conf:'
-sudo cat '/etc/postgresql/9.1/main/pg_hba.conf'
+echo 'extract postgresql.conf:'
+sudo -vE '^\s*#|^\s*$' /etc/postgresql/9.1/main/postgresql.conf
+echo 'extract pg_hba.conf:'
+sudo -vE '^\s*#|^\s*$' /etc/postgresql/9.1/main/pg_hba.conf
 
 echo 'INIT.d/postgresql:'
 sudo cat '/etc/init.d/postgresql'
