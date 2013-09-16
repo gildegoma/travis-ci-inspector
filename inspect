@@ -20,9 +20,11 @@ uname -a
 echo 'ulimit:'
 ulimit -a
 echo '/etc/issue:'
-cat /etc/issue
+sudo cat /etc/issue
+echo '/etc/sysctl.conf:'
+sudo cat /etc/sysctl.conf
 echo '/etc/default/locale'
-cat /etc/default/locale
+sudo cat /etc/default/locale
 
 echo '------------------------------------------------------'
 echo 'INSTALLED SOFTWARE'
