@@ -41,18 +41,6 @@ for s in {'mysql','postgresql','mongodb','couchdb','rabbitmq-server','riak','mem
 done
 
 echo '------------------------------------------------------'
-echo 'POSTGRESQL CONFIG'
-
-sudo ls -ltrh /etc/postgresql/
-echo 'postgresql.conf'
-sudo cat '/etc/postgresql/*/main/postgresql.conf'
-echo 'pg_hba.conf'
-sudo cat '/etc/postgresql/*/main/pg_hba.conf'
-
-echo 'INIT.d/postgresql:'
-sudo cat '/etc/init.d/postgresql'
-
-echo '------------------------------------------------------'
 echo 'OTHERS'
 find /tmp -maxdepth 4
 find $HOME -maxdepth 3
