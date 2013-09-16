@@ -15,9 +15,14 @@ egrep -c '(vmx|svm)' /proc/cpuinfo
 
 echo '------------------------------------------------------'
 echo 'OPERATING SYSTEM:'
+echo 'uname:'
 uname -a
+echo 'ulimit:'
 ulimit -a
+echo '/etc/issue:'
 cat /etc/issue
+echo '/etc/default/locale'
+cat /etc/default/locale
 
 echo '------------------------------------------------------'
 echo 'INSTALLED SOFTWARE'
