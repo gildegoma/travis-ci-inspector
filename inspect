@@ -21,12 +21,16 @@ echo 'ulimit:'
 ulimit -a
 echo '/etc/issue:'
 sudo cat /etc/issue
+
+ipcs -l -m
 echo '/etc/sysctl.conf and co:'
 sudo cat /etc/sysctl.conf
 sudo ls -ltrh /etc/sysctl.d
 sudo cat /etc/sysctl.d/30-shared-memory.conf
 echo '/etc/default/locale'
 sudo cat /etc/default/locale
+echo 'page size:'
+sudo getconf PAGE_SIZE
 
 echo '------------------------------------------------------'
 echo 'INSTALLED SOFTWARE'
