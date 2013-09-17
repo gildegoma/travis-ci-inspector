@@ -26,7 +26,10 @@ ipcs -l -m
 echo '/etc/sysctl.conf and co:'
 sudo cat /etc/sysctl.conf
 sudo ls -ltrh /etc/sysctl.d
-sudo cat /etc/sysctl.d/30-shared-memory.conf
+for f in /etc/sysctl.d/*.conf; do
+  echo "$f:"
+  sudo cat $f
+done
 echo '/etc/default/locale'
 sudo cat /etc/default/locale
 echo 'page size:'
