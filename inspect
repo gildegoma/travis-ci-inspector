@@ -9,11 +9,31 @@ echo '------------------------------------------------------'
 echo '(VIRTUAL) HARDWARE:'
 #free
 #grep 'model name' /proc/cpuinfo
+#echo "CPU Model:"
+#echo "Intel VT Support":
+#egrep -c '(vmx|svm)' /proc/cpuinfo
 
 echo '------------------------------------------------------'
 echo 'OPERATING SYSTEM:'
+echo 'uname:'
 uname -a
+echo 'ulimit:'
 ulimit -a
+echo '/etc/issue:'
+sudo cat /etc/issue
+
+ipcs -l -m
+echo '/etc/sysctl.conf and co:'
+sudo cat /etc/sysctl.conf
+sudo ls -ltrh /etc/sysctl.d
+for f in /etc/sysctl.d/*.conf; do
+  echo "$f:"
+  sudo cat $f
+done
+echo '/etc/default/locale'
+sudo cat /etc/default/locale
+echo 'page size:'
+sudo getconf PAGE_SIZE
 
 echo '------------------------------------------------------'
 echo 'INSTALLED SOFTWARE'
@@ -22,6 +42,20 @@ find /Applications -maxdepth 2
 find /opt -maxdepth 3 -executable
 find /usr/local -maxdepth 3 -executable
 #ls -l /usr/lib/jvm
+
+echo 'OUTDATED SOFTWARE'
+sudo apt-get install -qq apt-show-versions
+sudo apt-show-versions -u
+
+echo '------------------------------------------------------'
+echo 'SERVICES'
+
+ls -ltrh /etc/init.d/
+
+for s in {'mysql','postgresql','mongodb','couchdb','rabbitmq-server','riak','memcached','redis-server','cassandra','neo4j','elasticsearch','kestrel','hbase'}; do
+  echo "Check $s status:"
+  sudo service $s status
+done
 
 echo '------------------------------------------------------'
 echo 'OTHERS'
