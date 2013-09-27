@@ -1,1 +1,4 @@
 script: ./inspect
+addons:
+  firefox: '99.3' # silly version number, to check behavior on error
+
