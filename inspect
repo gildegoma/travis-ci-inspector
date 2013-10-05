@@ -66,3 +66,9 @@ echo 'OTHERS'
 find /tmp -maxdepth 4
 find $HOME -maxdepth 3
 
+echo '------------------------------------------------------'
+echo 'RVM Stuff'
+rvm --version
+rvm autolibs show
+rvm list
+
