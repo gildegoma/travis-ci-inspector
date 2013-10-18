@@ -7,3 +7,5 @@ install:
 before_script: sudo update-java-alternatives -s java-8-oracle
 script: java -version
 
+# Webupd8 released new package (jdk-8-ea-bin-b111-linux-x64-10_oct_2013.tar.gz)
+
