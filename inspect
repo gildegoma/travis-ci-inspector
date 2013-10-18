@@ -45,6 +45,10 @@ dpkg -l
 find /opt -maxdepth 3 -executable
 find /usr/local -maxdepth 3 -executable
 ls -l /usr/lib/jvm
+echo $JAVA_HOME
+which java
+java -version
+
 
 echo 'OUTDATED SOFTWARE'
 sudo apt-get install -qq apt-show-versions
@@ -69,4 +73,10 @@ echo '------------------------------------------------------'
 echo 'OTHERS'
 find /tmp -maxdepth 4
 find $HOME -maxdepth 3
+
+echo '------------------------------------------------------'
+echo 'RVM Stuff'
+rvm --version
+rvm autolibs show
+rvm list
 
