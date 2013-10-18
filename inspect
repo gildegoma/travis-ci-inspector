@@ -44,7 +44,7 @@ echo 'INSTALLED SOFTWARE'
 dpkg -l
 find /opt -maxdepth 3 -executable
 find /usr/local -maxdepth 3 -executable
-echo 'JAVA stuff:"
+echo 'JAVA stuff:'
 ls -l /usr/lib/jvm
 echo $JAVA_HOME
 which java
