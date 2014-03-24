@@ -1,5 +1,3 @@
 language: scala
 script:   ./inspect
 
-check scala/jvm machine on 24.03.2014
-
