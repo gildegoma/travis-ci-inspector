@@ -1,5 +1,5 @@
 language: android
-before_script: ./inspect
+before_install: ./inspect
 android:
   components:
     - build-tools-18.1.1
