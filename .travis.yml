@@ -1,1 +1,8 @@
-script: ./inspect
+language: android
+before_script: ./inspect
+android:
+  components:
+    - build-tools-18.1.1
+    - sysimg-19
+  licenses:
+    - 'android-wear-sdk-license-.+'
