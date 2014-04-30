@@ -69,8 +69,8 @@ find $HOME -maxdepth 3
 
 echo '------------------------------------------------------'
 echo 'Scala / SBT - specific stuff: '
-du -hs ~/.sbt/*/*
-du -hs ~/.ivy2/*/*
+du -hs ~/.sbt/*
+du -hs ~/.ivy2/*
 echo '/etc/sbt/jvmopts:'
 cat /etc/sbt/jvmopts
 echo '/etc/sbt/sbtopts:'
