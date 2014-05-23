@@ -1,6 +1,12 @@
 #!/bin/bash
 
 echo '------------------------------------------------------'
+echo 'Setup / Timing Sanity Checks'
+date
+ls -ltrhd $HOME
+ls -ltrh $HOME/build.sh
+
+echo '------------------------------------------------------'
 echo 'ENV VARS:'
 env
 grep -E '*' /etc/profile.d/*
@@ -65,4 +71,9 @@ echo '------------------------------------------------------'
 echo 'OTHERS'
 find /tmp -maxdepth 4
 find $HOME -maxdepth 3
+
+echo '------------------------------------------------------'
+echo 'DUMP the BUILD Script:
+cat /home/travis/build.sh
+echo '------------------------------------------------------'
 
