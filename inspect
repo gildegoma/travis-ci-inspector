@@ -73,7 +73,7 @@ find /tmp -maxdepth 4
 find $HOME -maxdepth 3
 
 echo '------------------------------------------------------'
-echo 'DUMP the BUILD Script:
+echo 'DUMP the BUILD Script:'
 cat /home/travis/build.sh
 echo '------------------------------------------------------'
 
