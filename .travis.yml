@@ -9,8 +9,8 @@ after_script:
 android:
   components:
     - tools # upgrade to latest Android SDK revision
-    - platform-tools
     - build-tools-20.0.0
+    - platform-tools # must be installed after 'tools' and 'build-tools' upgrades
     - android-L
     - android-20
     - android-19
