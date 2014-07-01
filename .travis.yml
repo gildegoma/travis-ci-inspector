@@ -15,8 +15,8 @@ before_install:
 before_script:
   - ./inspect
 
-android:
-  components:
+#android:
+#  components:
 #    - platform-tools 
 #    - build-tools-20.0.0
 #    - tools # latest platform-tools and build-tools are prerequisites for upgrading

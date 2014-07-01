@@ -1,6 +1,12 @@
 #!/bin/bash
 
 echo '------------------------------------------------------'
+echo 'ANDROID SDK:'
+echo "Components TOTAL:"
+android list sdk --no-ui --all --extended | grep -E '^id:' | awk -F '"' '{$1=""; print $2}' | wc -l
+android list sdk --no-ui --all --extended | grep -E '^id:' | awk -F '"' '{$1=""; print $2}' 
+
+echo '------------------------------------------------------'
 echo 'Setup / Timing Sanity Checks'
 date
 ls -ltrhd $HOME
