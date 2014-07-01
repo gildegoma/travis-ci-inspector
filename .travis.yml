@@ -1,19 +1,20 @@
 language: android
 before_install:
-  - ./inspect
+  - ./mini-inspect
   # workaround for travis-ci/travis-ci#2279
   - 'sudo mv /usr/local/android-sdk/tools/android-* /usr/local/bin'
   # Accept all licenses (workaround for travis-ci/travis-ci#2466)
   # Upgrade 'platform-tools' before 'tools' (workaround for travis-ci/travis-ci#2470)
   # Run dinstinct 'android update sdk' commands
   - "android-update-sdk --components='platform-tools' --accept-licenses='.+'"
+  - ./mini-inspect
   - "android-update-sdk --components='build-tools-20.0.0' --accept-licenses='.+'"
   - "android-update-sdk --components='extra-android-m2repository,extra-google-m2repository' --accept-licenses='.+'"
 
   # variant (huuge update)
   #- android-accept-licenses "android update sdk --no-ui --all" "android-.+"
 before_script:
-  - ./inspect
+  - ./mini-inspect
 
 #android:
 #  components:
