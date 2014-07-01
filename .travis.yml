@@ -6,28 +6,28 @@ before_install:
   # Accept all licenses (workaround for travis-ci/travis-ci#2466)
   # Upgrade 'platform-tools' before 'tools' (workaround for travis-ci/travis-ci#2470)
   # Run dinstinct 'android update sdk' commands
-  - "android-update-sdk --components='platform-tools,tools' --accept-licenses='.+'"
-  - "android-update-sdk --components='build-tools-20.0.0' --accept-licenses='.+'"
-  - "android-update-sdk --components='extra-android-m2repository,extra-google-m2repository' --accept-licenses='.+'"
+#  - "android-update-sdk --components='platform-tools,tools' --accept-licenses='.+'"
+#  - "android-update-sdk --components='build-tools-20.0.0' --accept-licenses='.+'"
+#  - "android-update-sdk --components='extra-android-m2repository,extra-google-m2repository' --accept-licenses='.+'"
 
   # variant (huuge update)
   #- android-accept-licenses "android update sdk --no-ui --all" "android-.+"
 after_script:
   - ./inspect
 
-#android:
-#  components:
-#    - platform-tools 
-#    - build-tools-20.0.0
+android:
+  components:
+    - platform-tools 
+    - build-tools-20.0.0
 #    - tools # latest platform-tools and build-tools are prerequisites for upgrading
-#    - android-L
-#    - android-20
-#    - android-19
-#    - sys-img-x86-android-tv-l
-#    - sys-img-armeabi-v7a-android-wear-20
-#    - sys-img-armeabi-v7a-android-19
-#    - extra-google-m2repository
-#    - extra-android-m2repository
-#  licenses:
-#    # Accept all licenses (workaround for travis-vi/travis-ci#2466
-#    - '.+'
+    - android-L
+    - android-20
+    - android-19
+    - sys-img-x86-android-tv-l
+    - sys-img-armeabi-v7a-android-wear-20
+    - sys-img-armeabi-v7a-android-19
+    - extra-google-m2repository
+    - extra-android-m2repository
+  licenses:
+    # Accept all licenses (workaround for travis-vi/travis-ci#2466
+    - '.+'
