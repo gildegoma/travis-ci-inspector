@@ -10,13 +10,24 @@ before_install:
   - ./mini-inspect
   - "android-update-sdk --components='tools' --accept-licenses='.+'"
   - ./mini-inspect
+  - echo "Debug-SDK updated with filter!"
+  - 'du -hs /usr/local/android-sdk/*/*'
+  - android-accept-licenses "android update sdk --no-ui --all" "android-.+|google-.+"
+  - echo "Debug-SDK updated without filter!"
+  - 'du -hs /usr/local/android-sdk/*/*'
+  - echo "Debug-SDK Install more components"
   - "android-update-sdk --components='build-tools-20.0.0' --accept-licenses='.+'"
   - "android-update-sdk --components='extra-android-m2repository,extra-google-m2repository' --accept-licenses='.+'"
+  - "android-update-sdk --components='android-L,sys-img-armeabi-v7a-android-tv-l,sys-img-x86-android-l' --accept-licenses='.+'"
+  - "android-update-sdk --components='android-20,sys-img-armeabi-v7a-android-wear-20' --accept-licenses='.+'"
+  - echo "Debug-SDK Install done"
+  - 'du -hs /usr/local/android-sdk/*/*'
 
   # variant (huuge update)
   #- android-accept-licenses "android update sdk --no-ui --all" "android-.+"
 before_script:
   - ./mini-inspect
+script: true
 
 #android:
 #  components:
