@@ -8,6 +8,8 @@ before_install:
   # Run dinstinct 'android update sdk' commands
   - "android-update-sdk --components='platform-tools' --accept-licenses='.+'"
   - ./mini-inspect
+  - "android-update-sdk --components='tools' --accept-licenses='.+'"
+  - ./mini-inspect
   - "android-update-sdk --components='build-tools-20.0.0' --accept-licenses='.+'"
   - "android-update-sdk --components='extra-android-m2repository,extra-google-m2repository' --accept-licenses='.+'"
 
