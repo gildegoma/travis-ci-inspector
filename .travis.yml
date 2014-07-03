@@ -7,21 +7,20 @@ before_install:
   # Upgrade 'platform-tools' before 'tools' (workaround for travis-ci/travis-ci#2470)
   # Run dinstinct 'android update sdk' commands
   - "android-update-sdk --components='platform-tools' --accept-licenses='.+'"
-  - ./mini-inspect
   - "android-update-sdk --components='tools' --accept-licenses='.+'"
   - ./mini-inspect
-  - echo "Debug-SDK updated with filter!"
-  - 'du -hs /usr/local/android-sdk/*/*'
-  - android-accept-licenses "android update sdk --no-ui --all" "android-.+|google-.+"
-  - echo "Debug-SDK updated without filter!"
-  - 'du -hs /usr/local/android-sdk/*/*'
-  - echo "Debug-SDK Install more components"
-  - "android-update-sdk --components='build-tools-20.0.0' --accept-licenses='.+'"
-  - "android-update-sdk --components='extra-android-m2repository,extra-google-m2repository' --accept-licenses='.+'"
-  - "android-update-sdk --components='android-L,sys-img-armeabi-v7a-android-tv-l,sys-img-x86-android-l' --accept-licenses='.+'"
-  - "android-update-sdk --components='android-20,sys-img-armeabi-v7a-android-wear-20' --accept-licenses='.+'"
-  - echo "Debug-SDK Install done"
-  - 'du -hs /usr/local/android-sdk/*/*'
+  #- android-accept-licenses "android update sdk --no-ui --all" "android-.+|google-.+"
+  #- echo "Debug-SDK updated without filter!"
+  #- 'du -hs /usr/local/android-sdk/*/*'
+  #- echo "Debug-SDK Install more components"
+  #- "android-update-sdk --components='build-tools-20.0.0' --accept-licenses='.+'"
+  #- "android-update-sdk --components='extra-android-m2repository,extra-google-m2repository' --accept-licenses='.+'"
+  #- "android-update-sdk --components='android-L,sys-img-armeabi-v7a-android-tv-l,sys-img-x86-android-l' --accept-licenses='.+'"
+  #- "android-update-sdk --components='android-20,sys-img-armeabi-v7a-android-wear-20' --accept-licenses='.+'"
+  #- ./mini-inspect
+  - "android-update-sdk --components='platform,extra,add-on,system-image' --accept-licenses='.+'"
+  - ./mini-inspect
+  - android-accept-licenses "android update sdk --no-ui --all" ".+"
 
   # variant (huuge update)
   #- android-accept-licenses "android update sdk --no-ui --all" "android-.+"
