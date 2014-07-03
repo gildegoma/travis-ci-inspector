@@ -1,42 +1,20 @@
+sudo: false
 language: android
 before_install:
   - ./mini-inspect
-  # workaround for travis-ci/travis-ci#2279
-  - 'sudo mv /usr/local/android-sdk/tools/android-* /usr/local/bin'
-  # Accept all licenses (workaround for travis-ci/travis-ci#2466)
-  # Upgrade 'platform-tools' before 'tools' (workaround for travis-ci/travis-ci#2470)
-  # Run dinstinct 'android update sdk' commands
-  - "android-update-sdk --components='platform-tools' --accept-licenses='.+'"
-  - "android-update-sdk --components='tools' --accept-licenses='.+'"
-  - ./mini-inspect
-  #- android-accept-licenses "android update sdk --no-ui --all" "android-.+|google-.+"
-  #- echo "Debug-SDK updated without filter!"
-  #- 'du -hs /usr/local/android-sdk/*/*'
-  #- echo "Debug-SDK Install more components"
-  #- "android-update-sdk --components='build-tools-20.0.0' --accept-licenses='.+'"
-  #- "android-update-sdk --components='extra-android-m2repository,extra-google-m2repository' --accept-licenses='.+'"
-  #- "android-update-sdk --components='android-L,sys-img-armeabi-v7a-android-tv-l,sys-img-x86-android-l' --accept-licenses='.+'"
-  #- "android-update-sdk --components='android-20,sys-img-armeabi-v7a-android-wear-20' --accept-licenses='.+'"
-  #- ./mini-inspect
-  - "android-update-sdk --components='platform,extra,add-on,system-image' --accept-licenses='.+'"
-  - ./mini-inspect
-  - android-accept-licenses "android update sdk --no-ui --all" ".+"
-
-  # variant (huuge update)
-  #- android-accept-licenses "android update sdk --no-ui --all" "android-.+"
-before_script:
-  - ./mini-inspect
 script: true
 
-#android:
-#  components:
-#    - platform-tools 
-#    - build-tools-20.0.0
-#    - tools # latest platform-tools and build-tools are prerequisites for upgrading
-#    - android-L
-#    - android-20
-#    - android-19
-#    - sys-img-x86-android-tv-l
+android:
+  components:
+    - platform-tools 
+    - tools
+    - build-tools-20.0.0
+    - android-L
+    - android-20
+    - android-19
+    - sys-img-x86-android-tv-l
+    - android-18
+    - extra-google-m2repository
 #    - sys-img-armeabi-v7a-android-wear-20
 #    - sys-img-armeabi-v7a-android-19
 #    - extra-google-m2repository
