@@ -75,4 +75,7 @@ echo '/etc/sbt/jvmopts:'
 cat /etc/sbt/jvmopts
 echo '/etc/sbt/sbtopts:'
 cat /etc/sbt/sbtopts
+echo 'Some of preinstalled jars'
+du -ms $HOME/.ivy2/cache/*/*/jars/*  | sort -n
+
 
