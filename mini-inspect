@@ -3,11 +3,15 @@
 echo '------------------------------------------------------'
 date
 echo 'ANDROID SDK:'
-#echo "Components TOTAL:"
-#android list sdk --no-ui --all --extended | grep -E '^id:' | awk -F '"' '{$1=""; print $2}' | wc -l
-#android list sdk --no-ui --all --extended | grep -E '^id:' | awk -F '"' '{$1=""; print $2}' 
-#echo "Installed Stuff:"
+echo "Tools Version"
+grep Pkg.Revision /usr/local/android-sdk/tools/source.properties | awk -F= '{ print $2 }'
+echo "Components TOTAL:"
+android list sdk --no-ui --all --extended | grep -E '^id:' | awk -F '"' '{$1=""; print $2}' | wc -l
+android list sdk --no-ui --all --extended | grep -E '^id:' | awk -F '"' '{$1=""; print $2}' 
+echo "Installed Stuff:"
 du -ms /usr/local/android-sdk/*/*
 du -ms /usr/local/android-sdk/*
 du -ms /usr/local/android-sdk/
+
+df -h
 

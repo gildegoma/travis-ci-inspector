@@ -2,6 +2,8 @@
 
 echo '------------------------------------------------------'
 echo 'ANDROID SDK:'
+echo "Tools Version"
+grep Pkg.Revision /usr/local/android-sdk/tools/source.properties | awk -F= '{ print $2 }'
 echo "Components TOTAL:"
 android list sdk --no-ui --all --extended | grep -E '^id:' | awk -F '"' '{$1=""; print $2}' | wc -l
 android list sdk --no-ui --all --extended | grep -E '^id:' | awk -F '"' '{$1=""; print $2}' 
