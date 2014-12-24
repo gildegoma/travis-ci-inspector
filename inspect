@@ -18,6 +18,7 @@ echo 'OPERATING SYSTEM:'
 echo 'uname:'
 uname -a
 uname -v
+uname -sr
 echo 'ulimit:'
 ulimit -a
 echo '/etc/issue:'
