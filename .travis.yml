@@ -1,2 +1,5 @@
 language: java
-script: ./inspect
+os:
+  - linux
+  - osx
+#script: ./inspect
