@@ -1,4 +1,5 @@
-sudo: true
+sudo: required
+os: [linux, osx]
 language: scala
-script:   ./inspect
+# script:   ./inspect
 
