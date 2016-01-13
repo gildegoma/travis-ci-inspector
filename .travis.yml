@@ -1,1 +1,10 @@
-script: ./inspect
+sudo: required
+dist: trusty
+
+addons:
+  postgresql: 9.4
+
+script:
+ - psql -U postgres -c "create extension postgis"
+ - ./inspect
+
