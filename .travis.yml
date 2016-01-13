@@ -1,5 +1,6 @@
 sudo: required
-#dist: trusty
+dist: trusty
+group: edge
 
 addons:
   postgresql: 9.4
